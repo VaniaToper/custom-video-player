@@ -1,0 +1,41 @@
+.header {
+  padding: 49px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $colorBlack;
+  &__content {
+    height: 50px;
+    width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    .header-menu {
+      width: 775px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      &__link {
+        font-family: Roboto;
+        font-weight: 200;
+        font-size: 22px;
+        letter-spacing: 2px;
+        color: white;
+        &:hover {
+          color: $colorGoldHover;
+          transition-duration: 0.2s;
+        }
+        &:active {
+          transform: scale(0.985);
+          color: $colorGoldActive;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+  }
+}

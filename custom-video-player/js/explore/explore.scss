@@ -1,0 +1,62 @@
+.explore {
+  &__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .bar{
+    margin-bottom: 106px;
+  }
+  &__text {
+    width: 660px;
+  }
+  &__article {
+    margin-bottom: 25px;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 38px;
+    color: #ffffff;
+    span {
+      color: #caaa7d;
+    }
+  }
+  &__slider {
+    margin-top: 15px;
+    position: relative;
+    width: 50%;
+    height: 700px;
+    .slider__background-img {
+    }
+    .slider__foreground-img {
+      width: 65%;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 720px 100%;
+  }
+  &__input {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(#f2f2f2, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      background: url('../assets/Images/explore/explore-thump.png');
+      height: 700px;
+      width: 39px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,701 @@
+.tickets {
+}
+.booking {
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: -100vw;
+  padding: 90px 235px;
+  width: 1440px;
+  height: 845px;
+  background: white;
+  &__overlay {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    transition: background 0.3s;
+  }
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $colorBlack;
+      transition: 0.2s;
+    }
+    &:hover {
+      &::after,
+      &::before {
+        background: rgb(46, 46, 46);
+      }
+    }
+    &:active {
+      &::after {
+        transform: rotate(-45deg) translate(0px, -50%) scale(0.95);
+        background: rgb(65, 65, 65);
+      }
+    }
+    &:active {
+      &::before {
+        transform: rotate(45deg) translate(0px, 50%) scale(0.95);
+        background: rgb(65, 65, 65);
+      }
+    }
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg) translate(0px, -50%);
+    }
+    &::before {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 50%);
+    }
+  }
+  &__body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__name {
+    border-bottom: 2px solid #740c11;
+  }
+  &__logo {
+    background: url("../assets/Images/tickets/goldLogo.png") no-repeat;
+    width: 85px;
+    height: 42px;
+  }
+  &__title {
+    font-family: Forum;
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: $colorGoldHover;
+  }
+  &__subtitle {
+    margin: 13px 0;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: $colorRed;
+  }
+  &__forms {
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px 0;
+  }
+  &__input {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    padding: 12px 0 12px 45px;
+    background: #ffffff;
+    border: 1px solid $colorBlack;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: $colorBlack;
+    &::placeholder {
+      font-family: Roboto;
+      font-size: 18px;
+      line-height: 21px;
+      color: $colorBlack;
+    }
+  }
+  &__date {
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    .date__input {
+      position: relative;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 190px;
+      font-family: Roboto;
+      font-size: 18px;
+      line-height: 21px;
+      color: $colorBlack;
+      &::-webkit-calendar-picker-indicator {
+        width: 17px !important;
+        height: 17px !important;
+        position: absolute;
+        right: 12px;
+        background: url("../assets/Images/tickets/arrow.svg") no-repeat;
+        background-position: center center;
+        cursor: pointer;
+        transition: 0.2s;
+        transform: rotate(var(--rotate));
+      }
+    }
+  }
+  .input__error {
+    display: none;
+    color: red;
+  }
+
+  .select {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    background-color: white;
+    &__expand {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 48px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translate(-50%, -50%);
+        background: url("../assets/Images/tickets/arrow.svg") no-repeat;
+        width: 17px;
+        height: 17px;
+        transition: all 250ms cubic-bezier(0.4, 0.25, 0.3, 1);
+        pointer-events: none;
+      }
+      &:checked::after {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+    }
+    &__expand-label {
+      display: block;
+      width: 100%;
+      height: 48px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+    &__close {
+      display: none;
+    }
+    &__close-label {
+      display: none;
+    }
+    &__items {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid $colorBlack;
+      padding-top: 48px;
+    }
+    &__input {
+      display: none;
+    }
+    &__label {
+      padding-left: 43px;
+      height: 0;
+      display: block;
+      overflow: hidden;
+      font-family: Roboto;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 48px;
+      color: $colorBlack;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all 250ms cubic-bezier(0.4, 0.25, 0.3, 1);
+      &-placeholder {
+        height: 48px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        vertical-align: middle;
+        background-color: transparent;
+        font-weight: normal;
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 12px;
+          transform: translate(0, -50%);
+          background: url("../assets/Images/tickets/notice.svg") no-repeat;
+          width: 17px;
+          height: 17px;
+        }
+      }
+    }
+    &__expand:checked {
+      + .select__close-label {
+        display: block;
+        + .select__options {
+          .select__label {
+            height: 48px;
+            &:hover {
+              background-color: #e7e7e7;
+            }
+          }
+          + .select__expand-label {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__input:checked + .select__label {
+      height: 48px;
+      margin-top: -48px;
+    }
+  }
+  .tickets-type {
+    &__age {
+      height: 135px;
+      width: 100%;
+      padding: 8px 15px 15px 15px;
+      border: 1px solid $colorBlack;
+      &__title {
+        font-family: Forum;
+        font-size: 18px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: $colorGold;
+      }
+      &__bar {
+        margin: 3px 0 12px 0;
+        width: 100%;
+        height: 2px;
+        background: $colorRed;
+      }
+      &__count {
+        display: flex;
+        flex-direction: column;
+        gap: 18px 0;
+      }
+      .spinner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__text {
+          font-family: Roboto;
+          font-size: 18px;
+          line-height: 21px;
+          color: $colorBlack;
+        }
+        &__input {
+          display: flex;
+          flex-direction: row;
+          width: 109px;
+          height: 25px;
+
+          &-button {
+            width: 33.33%;
+            height: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              // position: absolute;
+              // z-index: 0;
+              // top: 50%;
+              // left: 50%;
+              // transform: translate(-50%, -50%);
+            }
+          }
+
+          input {
+            width: 33.33%;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 21px;
+            color: $colorBlack;
+            border: 1px solid black;
+            &::-webkit-inner-spin-button {
+              display: none;
+            }
+            &::-webkit-outer-spin-button {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .forms__error {
+    border: 1px solid red;
+  }
+}
+.payment {
+  border: 1px solid $colorBlack;
+  height: 100%;
+  width: 530px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__overview {
+    position: relative;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: #272727;
+  }
+  &__subtitle {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #740c11;
+    opacity: 0.9;
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__info {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__data{
+    display: flex;
+    flex-direction: row;
+    gap: 0 15px ;
+    &-icon {
+      width: 15px;
+      height: 15px;
+    }
+    &-text {
+      font-family: Roboto;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      color: $colorBlack;
+    }
+  }
+  &__money {
+    margin: 20px 0 17px 0;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__amount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__tickets-type {
+    font-family: Roboto;
+    font-size: 22px;
+    line-height: 26px;
+    color: $colorBlack;
+    &::before {
+      content: attr(title);
+      margin-right: 10px;
+      padding: 0 10px;
+      background: black;
+      border-radius: 4px;
+      font-family: Roboto;
+      font-size: 18px;
+      line-height: 21px;
+      color: #a4a4a3;
+    }
+  }
+
+  &__group-total {
+    font-family: Roboto;
+    font-size: 22px;
+    line-height: 26px;
+    color: $colorBlack;
+  }
+  .senior {
+    position: relative;
+    margin-top: 6px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #740c11;
+    }
+  }
+  &__total {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__total-text {
+    font-family: Roboto;
+    font-size: 32px;
+    line-height: 37px;
+    color: $colorBlack;
+  }
+  &__total-amount {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: $colorBlack;
+  }
+  &__card-button {
+    position: relative;
+    height: 310px;
+  }
+  &__card-front {
+    position: relative;
+    z-index: 1;
+    width: 360px;
+    height: 215px;
+    padding: 12px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
+    background: #bcbcbc;
+  }
+  &__card-back {
+    position: absolute;
+    padding-top: 25px;
+    right: 0;
+    top: 25px;
+    width: 360px;
+    height: 215px;
+    border-radius: 3px;
+    background: #939393;
+  }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    height: 45px;
+    background: $colorRed;
+    opacity: 0.9;
+    font-family: Roboto;
+    font-size: 20px;
+    line-height: 23px;
+    color: #ffffff;
+    overflow: hidden;
+  }
+}
+
+.card-front {
+  &__logo {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    height: 66px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  &__logo-visa {
+    width: 55px;
+    height: 17px;
+  }
+  &__logo-mastercard {
+    width: 54px;
+    height: 33px;
+  }
+  &__info {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    font-family: Roboto;
+    font-size: 11px;
+    line-height: 13px;
+    color: #161615;
+  }
+  &__number-input {
+    height: 35px;
+    width: 215px;
+    padding-left: 10px;
+    border: 0.5px solid #a4a4a3;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+    color: #161615;
+  }
+
+  &__date {
+    width: 215px;
+    display: flex;
+    justify-content: space-between;
+    &__body {
+      display: flex;
+      flex-direction: row;
+    }
+    &-input {
+      height: 35px;
+      width: 72px;
+      padding-left: 10px;
+
+      font-family: Roboto;
+      font-size: 12px;
+      line-height: 14px;
+      color: #161615;
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+      &::-webkit-outer-spin-button {
+        display: none;
+      }
+    }
+    &__button {
+      width: 28px;
+      height: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border-left: 0.5px solid #a4a4a3;
+      button {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 45%;
+        width: 100%;
+        background: none;
+      }
+      svg {
+        fill: #a4a4a3;
+      }
+    }
+    .card-front__date__plus {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+  &__name-input {
+    height: 35px;
+    width: 320px;
+    padding-left: 10px;
+    border: 0.5px solid #a4a4a3;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+    color: #161615;
+  }
+}
+.card-front-number {
+}
+.card-front-date {
+}
+.card-back {
+  &__stripe {
+    width: 100%;
+    height: 48px;
+    background: #161615;
+  }
+
+  &__cvv {
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+    height: 105px;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+      font-family: Roboto;
+      font-size: 13px;
+      line-height: 15px;
+      color: #161615;
+    }
+    &-input {
+      text-align: center;
+      font-family: Roboto;
+      font-size: 14px;
+      line-height: 14px;
+      color: #161615;
+      width: 75px;
+      height: 35px;
+    }
+    &-text {
+      width: 48px;
+      font-family: Roboto;
+      font-size: 9px;
+      line-height: 11px;
+      color: #161615;
+    }
+  }
+}
+.invalid-form {
+  position: relative;
+  border: 2px solid rgb(190, 0, 0);
+  &::after {
+    content: "1234123";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000;
+  }
+}
+
+.ripple-effect {
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  opacity: 1;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.ripple-animation {
+  animation: ripple-drop 0.4s cubic-bezier(0, 0, 0.3, 1);
+}
+
+@keyframes ripple-drop {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

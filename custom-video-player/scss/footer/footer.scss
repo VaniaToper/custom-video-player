@@ -1,0 +1,125 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: $colorBlack;
+  &__body {
+    width: 1440px;
+    position: relative;
+    margin: 75px 0 35px 0;
+    height: 155px;
+    display: flex;
+    flex-direction: row;
+  }
+  &__site-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 3px solid #666666;
+    &__body {
+      width: 1440px;
+      margin: 50px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Roboto;
+      font-weight: 200;
+      font-size: 22px;
+      line-height: 22px;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+  }
+}
+.footer-logo {
+  margin-right: 145px;
+  width: 195px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-start;
+  &__name {
+    font-family: Forum;
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+.footer-menu {
+  height: 100%;
+  width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  &__link {
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    transition-duration: 0.1s;
+    &:hover {
+      transition-duration: 0.2s;
+      color: $colorGoldHover;
+    }
+    &:active {
+      transform: scale(0.985);
+      transition-duration: 0.2s;
+      color: $colorGoldActive;
+    }
+  }
+}
+.footer-socialmedia {
+  width: 23.7%;
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .circle {
+    position: relative;
+    &:hover {
+      .icon {
+        transition: 0.2s;
+        border: 1px solid $colorGoldHover;
+      }
+      .icon__svg {
+        transition: 0.2s;
+        fill: $colorGoldHover;
+      }
+    }
+    &:active {
+      transform: scale(0.95);
+      .icon {
+        transition: 0.2s;
+        border: 1px solid $colorGoldActive;
+      }
+      .icon__svg {
+        transition: 0.2s;
+        fill: $colorGoldActive;
+      }
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid #666666;
+      border-radius: 50%;
+      filter: drop-shadow(0px 0px 0px #666666);
+      &__svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        fill: white;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,549 @@
+.booking {
+  margin: 0 auto;
+  padding: 90px 235px;
+  width: 1440px;
+  height: 835px;
+}
+.booking__body {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.booking__info {
+  width: 400px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.booking__name {
+  border-bottom: 2px solid #740c11de;
+}
+.booking__logo {
+  background: url("../assets/Images/tickets/goldLogo.png") no-repeat;
+  width: 85px;
+  height: 42px;
+}
+.booking__title {
+  font-family: Forum;
+  font-size: 50px;
+  line-height: 55px;
+  text-transform: uppercase;
+  color: #9d8665;
+}
+.booking__subtitle {
+  margin: 13px 0;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #710707;
+}
+.booking__forms {
+  height: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.booking__input {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 0 12px 45px;
+  background: #ffffff;
+  border: 1px solid #030303;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking__input::-webkit-input-placeholder {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking__input::-moz-placeholder {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking__input:-ms-input-placeholder {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking__input::-ms-input-placeholder {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking__input::placeholder {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.booking__date .date__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 190px;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+  padding-left: 45px;
+}
+.booking__date .date__input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background: url("../assets/Images/tickets/arrow.png") no-repeat;
+}
+.booking .tickets-type__button {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 0 12px 45px;
+  background: #ffffff;
+  border: 1px solid #030303;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+  cursor: pointer;
+}
+.booking .tickets-type__list {
+  max-height: 0;
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+.booking .tickets-type__list__title {
+  margin-bottom: 5px;
+  font-family: Forum;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: capitalize;
+  color: #9d8665;
+}
+.booking .tickets-type__list__bar {
+  width: 100%;
+  height: 2px;
+  background: #710707;
+}
+.booking .tickets-type__list .spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.booking .tickets-type__list .spinner__basic {
+  margin: 18px 0;
+}
+.booking .tickets-type__list .spinner__text {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.booking .tickets-type__list .spinner__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 105px;
+  height: 25px;
+}
+.booking .tickets-type__list .spinner__input-minus {
+  width: 33.33%;
+  height: 100%;
+  background: black;
+  color: white;
+}
+.booking .tickets-type__list .spinner__input-plus {
+  width: 33.33%;
+  height: 100%;
+  background: black;
+  color: white;
+}
+.booking .tickets-type__list .spinner__input input {
+  width: 33.33%;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+  border: 1px solid black;
+}
+.booking .tickets-type__list .spinner__input input::-webkit-inner-spin-button {
+  display: none;
+}
+.booking .tickets-type__list .spinner__input input::-webkit-outer-spin-button {
+  display: none;
+}
+.booking .forms__error {
+  border: 1px solid red;
+}
+
+.payment {
+  border: 1px solid #030303;
+  height: 100%;
+  width: 530px;
+  padding: 25px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.payment__overview {
+  position: relative;
+  height: 155px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.payment__title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: #272727;
+}
+.payment__subtitle {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #740c11;
+  opacity: 0.9;
+}
+.payment__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.payment__info {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.payment__data-text {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.payment__money {
+  margin: 20px 0 17px 0;
+  height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.payment__amount {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.payment__tickets-type {
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 26px;
+  color: #030303;
+}
+.payment__tickets-type::before {
+  content: attr(title);
+  margin-right: 10px;
+  padding: 0 10px;
+  background: black;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  color: #a4a4a3;
+}
+.payment__group-total {
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 26px;
+  color: #030303;
+}
+.payment .senior {
+  position: relative;
+  margin-top: 6px;
+}
+.payment .senior::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #740c11;
+}
+.payment__total {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.payment__total-text {
+  font-family: Roboto;
+  font-size: 32px;
+  line-height: 37px;
+  color: #030303;
+}
+.payment__total-amount {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: #030303;
+}
+.payment__card-button {
+  position: relative;
+  height: 310px;
+}
+.payment__card-front {
+  position: relative;
+  z-index: 2;
+  width: 360px;
+  height: 215px;
+  padding: 12px 20px 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 3px;
+  background: #bcbcbc;
+}
+.payment__card-back {
+  position: absolute;
+  padding-top: 25px;
+  right: 0;
+  top: 25px;
+  width: 360px;
+  height: 215px;
+  border-radius: 3px;
+  background: #939393;
+}
+.payment__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 45px;
+  background: #710707;
+  opacity: 0.9;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+}
+
+.card-front__logo {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  height: 66px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.card-front__logo-visa {
+  width: 55px;
+  height: 17px;
+}
+.card-front__logo-mastercard {
+  width: 54px;
+  height: 33px;
+}
+.card-front__info {
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.card-front__title {
+  font-family: Roboto;
+  font-size: 11px;
+  line-height: 13px;
+  color: #161615;
+}
+.card-front__number-input {
+  height: 35px;
+  width: 215px;
+  border: 0.567px solid #a4a4a3;
+}
+.card-front__inputs {
+  width: 215px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.card-front__date-input {
+  height: 35px;
+  width: 100px;
+  border: 0.567px solid #a4a4a3;
+}
+.card-front__name-input {
+  height: 35px;
+  width: 320px;
+  border: 0.567px solid #a4a4a3;
+}
+
+.card-back__stripe {
+  width: 100%;
+  height: 48px;
+  background: #161615;
+}
+.card-back__cvv {
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+  height: 105px;
+  width: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.card-back__cvv-title {
+  font-family: Roboto;
+  font-size: 13px;
+  line-height: 15px;
+  color: #161615;
+}
+.card-back__cvv-input {
+  width: 75px;
+  height: 35px;
+}
+.card-back__cvv-text {
+  width: 48px;
+  font-family: Roboto;
+  font-size: 9px;
+  line-height: 11px;
+  color: #161615;
+}

@@ -1,0 +1,40 @@
+.contacts {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.contacts-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 244px;
+  &__title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 128px;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+  }
+}
+.leaflet-bottom {
+  z-index: 1 !important;
+}
+.leaflet-control {
+  z-index: 1 !important;
+}
+.leaflet-top {
+  z-index: 1 !important;
+}

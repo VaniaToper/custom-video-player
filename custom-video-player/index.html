@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <title>Video</title>
+      <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="player">
+      <video class="player__viewer " src="assets/video0.mp4"></video>
+      <svg class="player__icon player__icon-unhidden" width="220" height="220">
+        <use xlink:href="sprite.svg#play1"></use>
+      </svg>
+      <div class="player__toolbar toolbar">
+        <div class="toolbar__body">
+          <button class="toolbar__toggle toggle">
+            <svg class="toggle__play" width="27" height="30">
+              <use xlink:href="sprite.svg#play2"></use>
+            </svg>
+            <svg class="toggle__pause" style="display: none;" width="27" height="30">
+              <use xlink:href="sprite.svg#pause"></use>
+            </svg>
+          </button>
+          <div class="player__progress">
+            <input class="player__progress__input" type="range" min="0" max="100" value="0" step="0.01">
+          </div>
+          <div class="player__volume volume">
+            <button class="volume__button">
+              <svg class="volume__button__on" width="38" height="30">
+                <use xlink:href="sprite.svg#volumeon"></use>
+              </svg>
+              <svg class="volume__button__off" width="38" height="30">
+                <use xlink:href="sprite.svg#volumeoff"></use>
+              </svg>
+            </button>
+            <div class="volume__slider">
+              <input class="volume__slider__input" name="volume" type="range" min="0" max="1" step="0.01">
+            </div>
+          </div>
+          <button class="player__fullscreen">
+            <svg width="36" height="36">
+              <use xlink:href="sprite.svg#fullscreen"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Клавиши</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">'space' = пауза/играть</a>
+        <a href="#">'M' =  отключение/включение звука</a>
+        <a href="#">'F' = включение/выключение полноэкранного режим<</a>
+        <a href="#">'>' = ускорение воспроизведения ролика</a>
+        <a href="#">'<' = замедление воспроизведения ролика</a>
+        <a href="#">'0' = начала видео</a>
+        <a href="#">'1' = 10% видео</a>
+        <a href="#">'2' = 20% видео</a>
+        <a href="#">'3' = 30% видео</a>
+        <a href="#">'4' = 40% видео</a>
+        <a href="#">'5' = 50% видео</a>
+        <a href="#">'6' = 60% видео</a>
+        <a href="#">'7' = 70% видео</a>
+        <a href="#">'8' = 80% видео</a>
+        <a href="#">'9' = 90% видео</a>
+        <a href="#">'ArrowRight' = +5 секунд</a>
+        <a href="#">'ArrowLeft' = -5 секунд</a>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
